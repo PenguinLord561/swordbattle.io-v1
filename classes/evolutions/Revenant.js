@@ -1,29 +1,28 @@
 
-const Archer = require("./Archer");
 const Evolution = require("./Evolution");
+const Illusioner = require("./Illusioner");
+const Vangaurd = require("./Vangaurd");
 
-const Revenant = require("./Revenant");
-
-class Vampire extends Evolution {
+class Revenant extends Evolution {
     constructor() {
         super();
-        this.name = "vampire";
+        this.name = "revenant";
         this.abilityDuration = 7000;
         this.abilityCooldown = 30000;
-        this.subEvolutions = [30000, new Revenant(), new Archer()];
+        this.subEvolutions = [50000, new Vangaurd(), new Illusioner()];
     }
     default() {
         return {
-            maxHealth: 0.85,
-            health: 0.85,
-            speed: 1.2,
-            scale: 1.1,
+            maxHealth: 0.7,
+            health: 0.7,
+            speed: 1.3,
+            scale: 1.2,
             power: 0.9,
             resistance: 0.7,
-            damage: 1.1,
+            damage: 1.3,
             damageCooldown: 0.85,
-            healAmount: 0.8,
-            leech: 2,
+            healAmount: 0.7,
+            leech: 2.5,
         };
     }
     ability() {
@@ -35,4 +34,4 @@ class Vampire extends Evolution {
         };
     }
 }
-module.exports = Vampire;
+module.exports = Revenant;

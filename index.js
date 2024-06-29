@@ -27,8 +27,8 @@ var uuid = require("uuid");
 var fs = require("fs");
 var process = require("process");
 
-const Filtery = require("purgomalum-swear-filter");
-const filtery = new Filtery();
+// const Filtery = require("purgomalum-swear-filter");
+// const filtery = new Filtery();
 
 var ipInfo = require("ip-info-finder");
 
@@ -190,7 +190,7 @@ var oldlevels = [
   {coins: 200000, scale: 1.8},
   {coins: 300000, scale: 1.9},
   {coins: 400000, scale: 2},
-  {coins: 500000, scale: 2.5},
+  {coins: 500000, scale: 2.2},
 ];
 app.set("trust proxy", true);
 /*
@@ -205,7 +205,7 @@ app.all("*", (req, res, next) => {
   // get ip from headers first
   try {
   const ip = req.headers["x-forwarded-for"].split(",")[0];
- // console.log("IP", ip);
+  //console.log("IP", ip);
   req.ip = ip;
   // if ip is in ban list, send 403
   if (moderation.bannedIps.includes(ip)) {
@@ -984,16 +984,16 @@ var coins = [];
 var chests = [];
 var flyingSwords = [];
 
-var maxCoins = 2500;
+var maxCoins = 0;
 
-var maxChests = 22;
-var maxUncommonChests = 11;
-var maxRareChests = 7;
-var maxEpicChests = 4;
-var maxLegendaryChests = 2;
-var maxMythicalChests = 1;
+var maxChests = 35;
+var maxUncommonChests = 0;
+var maxRareChests = 0;
+var maxEpicChests = 0;
+var maxLegendaryChests = 0;
+var maxMythicalChests = 0;
 
-var maxAiPlayers = 20;
+var maxAiPlayers = 0;
 var maxPlayers = 100;
 
 

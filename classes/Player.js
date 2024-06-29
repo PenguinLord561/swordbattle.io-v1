@@ -49,6 +49,7 @@ class Player {
     this.prevAbilityCooldown = null;
 
    this.skin = "player";
+    
     this.levelScale = 0.85;
 
     this.resistance = 20;
@@ -81,7 +82,7 @@ power = (power/((this.mousePos.viewport.height+this.mousePos.viewport.width)/2))
 
 if(power > 20) power = 100;
 else power *= 100/20;
-
+  
 if(power < 15)  power = 0;
 go *= power/100;
 
@@ -183,20 +184,22 @@ var move = true;
 
     var pos = this.movePointAtAngle([this.pos.x, this.pos.y], (moveAngle)*Math.PI/180 , go);
 
-    if(move) {
+    if((move)&&(!this.frozen)) {
     this.pos.x = clamp(pos[0], -(map/2), map/2);
     this.pos.y = clamp(pos[1],-(map/2), map/2);
     }
-
-    if(this.pos.x <= -(map/2)) this.pos.x = -(map/2);
-    if(this.pos.x >= map/2) this.pos.x = map/2;
-    if(this.pos.y <= -(map/2)) this.pos.y = -(map/2);
-    if(this.pos.y >= map/2) this.pos.y = map/2;
-
+    
+      if(this.pos.x <= -(map/2)) this.pos.x = -(map/2);
+      if(this.pos.x >= map/2) this.pos.x = map/2;
+      if(this.pos.y <= -(map/2)) this.pos.y = -(map/2);
+      if(this.pos.y >= map/2) this.pos.y = map/2;
+    
     moveAngle = getCardinal(moveAngle);
 
     } else {
-      var moveAngle = getCardinal(this.moveWithMouse());
+      if (!this.frozen){
+        var moveAngle = getCardinal(this.moveWithMouse());
+      }
     }
    // console.log(players.filter(player=> player.id != this.id && player.touchingPlayer(this)))
 
@@ -208,10 +211,13 @@ var move = true;
         this.pos.x = player.pos.x + Math.cos(angle) * (radius + playerSize / 2);
         this.pos.y = player.pos.y + Math.sin(angle) * (radius + playerSize / 2);
       });
+    
 
+    
     this.lastMove = Date.now();
     PlayerList.updatePlayer(this);
   }
+  
   movePointAtAngle(point, angle, distance) {
     return [
         point[0] + (Math.sin(angle) * distance),
@@ -224,17 +230,41 @@ var move = true;
     var oldPos = this.pos;
 
     let force;
-    if((player.evolution == "fisherman") && !player.swordInHand) {
-      this.pos.x = player.pos.x;
-      this.pos.y = player.pos.y;
+    if(((player.evolution == "fisherman")||(player.evolution == "runic")) && !player.swordInHand) {
+      if (player.evolution=="fisherman") {
+        this.pos.x = player.pos.x;
+        this.pos.y = player.pos.y;
+      } else if (player.evolution=="runic"){
+        player.pos.x = this.pos.x;
+        player.pos.y = this.pos.y;
+      }
 
     } else {
       force = Math.max(player.power-this.resistance,50);
-
+      if (player.evolution == "touketsu" && !player.swordInHand) {
+        this.frozen = true; 
+        setTimeout(() => {
+          this.frozen = false; 
+        }, 2500);
+      }
+      if (player.evolution == "illusioner" && !player.swordInHand) {
+          player.illusion = true; 
+          setTimeout(() => {
+              player.illusion = false; 
+          }, 3000);
+      }
+      if (player.evolution === "mummy" && !player.swordInHand) {
+          const originalSpeed = this.speed;
+          this.speed *= 0.5;
+          setTimeout(() => {
+              this.speed = originalSpeed; 
+          }, 4000);
+      }
   var pos = this.movePointAtAngle([this.pos.x, this.pos.y], (angle+45)*Math.PI/180 , force);
-
-    this.pos.x = clamp(pos[0], -(map/2), map/2);
-    this.pos.y = clamp(pos[1],-(map/2), map/2);
+    if (!this.frozen){
+      this.pos.x = clamp(pos[0], -(map/2), map/2);
+      this.pos.y = clamp(pos[1],-(map/2), map/2);
+    }
 
     if(this.touchingPlayer(player)) {
       this.pos = oldPos;
@@ -583,7 +613,9 @@ DO UPDATE SET
 
 
   getSendObj() {
-    return {swordInHand: this.swordInHand, country: this.country, skin: this.skin, abilityActive: this.abilityActive, evolution: this.evolution,verified: this.verified, damageCooldown: this.damageCooldown, joinTime: this.joinTime, skin: this.skin, id: this.id, name:this.name, health:this.health, coins: this.coins,pos:this.pos, speed:this.speed,scale:this.scale,maxHealth: this.maxHealth, mouseDown: this.mouseDown, mousePos: this.mousePos, ranking: this.ranking, zombie: this.zombie ?? undefined};
+    if (!this.illusion) {
+      return {swordInHand: this.swordInHand, country: this.country, skin: this.skin, abilityActive: this.abilityActive, evolution: this.evolution,verified: this.verified, damageCooldown: this.damageCooldown, joinTime: this.joinTime, skin: this.skin, id: this.id, name:this.name, health:this.health, coins: this.coins,pos:this.pos, speed:this.speed,scale:this.scale,maxHealth: this.maxHealth, mouseDown: this.mouseDown, mousePos: this.mousePos, ranking: this.ranking, zombie: this.zombie ?? undefined};
+    }
   }
 }
 

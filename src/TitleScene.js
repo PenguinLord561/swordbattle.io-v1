@@ -93,7 +93,7 @@ try {
           pings.push(res3);
           //now calculate the optimal server.
           if (pings.filter(p => p.error).length == pings.length) {
-            alert("Could not find an available server. Please try again later.");
+            // alert("Could not find an available server. Please try again later.");
           } else {
 
             var scores = pings.map(p => (p.ping*3) - (p.info.actualPlayercount ? p.info.actualPlayercount * 50 : 0) + (p.info.lag == "No lag" ? 0 : p.info.lag == "Moderate lag" ? 250 : 1000) + (p.info.actualPlayercount > 10 ? Math.abs(p.info.actualPlayercount-10)*100: 0) + (p.info.actualPlayercount < 3 ? Math.abs(p.info.actualPlayercount)*200: 0)).map((p) => !p ? Infinity : p);
@@ -535,6 +535,7 @@ transform: translateX(-50%);
               this.nameBox.getChildByName("name").classList.add("loggedin");
 
               this.nameBox.getChildByName("btn").innerHTML = "Play!";
+            
               this.nameBox.getChildByName("btn").disabled = false;
 
               this.accountData = res.data;

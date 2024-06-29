@@ -1,38 +1,36 @@
 const Evolution = require("./Evolution");
-const Juggernaut = require("./Juggernaut");
-const Fisherman = require("./Fisherman");
+const Touketsu = require("./Touketsu");
+const Inferno = require("./Inferno");
 class Samurai extends Evolution {
     constructor() {
         super();
         this.name = "samurai";
-        this.abilityDuration = 8000;
-        this.abilityCooldown = 70000;
-        this.subEvolutions = [50000, new Fisherman(), new Juggernaut()];
+        this.abilityDuration = 2000;
+        this.abilityCooldown = 7000;
+        this.subEvolutions = [50000, new Inferno(), new Touketsu()];
     }
     default() {
         return {
-            maxHealth: 1.6,
-            health: 1.6,
-            speed: 1.2,
+            maxHealth: 1.1,
+            health: 1.1,
+            speed: 1.4,
             scale: 1.3,
             power: 1,
-            resistance: 5.5,
-            damage: 1.3,
+            resistance: 4,
+            damage: 1.8,
             damageCooldown: 1.5,
             healAmount: 1.5,
-            healWait: 2
+            healWait: 2,
         };
     }
     ability() {
         return {
-            healWait: 0,
-            healAmount: 1.5,
-            scale: 1.6,
+            healWait: 0.1,
+            healAmount: 1,
+            scale: 1.5,
             power: 1.5,
-            damageCooldown: 0.9,
-            resistance: 1,
-            damage: 1.5,
-            speed: 1.5,
+            damageCooldown: 0.7,
+            speed: 2.2,
         };
     }
 }

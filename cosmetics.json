@@ -8,6 +8,20 @@
             "description": "The default skin"
         },
         {
+            "name": "phantom",
+            "displayName": "Phantom",
+            "url": "/assets/images/phantomPlayer.png",
+            "price": 0,
+            "description": "Hide in the shadows..."
+        },
+        {
+            "name": "wasd",
+            "displayName": "Wasd",
+            "url": "/assets/images/wasdPlayer.png",
+            "price": 0,
+            "description": "Probably drinking tea"
+        },
+        {
             "name": "yinyang",
             "displayName": "Yin Yang",
             "url": "/assets/images/yinyangPlayer.png",

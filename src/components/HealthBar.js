@@ -51,10 +51,10 @@ class HealthBar {
             this.bar.fillStyle(0xff0000);
         }
         else if(this.value/this.maxValue  < 0.5) {
-           this.bar.fillStyle(0xFFFF00); 
+           this.bar.fillStyle(0xffff4d); 
         } else
         {
-            this.bar.fillStyle(0x00ff00);
+            this.bar.fillStyle(0x009900);
         }
     } else {
 

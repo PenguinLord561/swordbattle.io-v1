@@ -1,41 +1,40 @@
-const Juggernaut = require("./Juggernaut");
+
 const Evolution = require("./Evolution");
 const Fisherman = require("./Fisherman");
+const Illusioner = require("./Illusioner");
 class Lumberjack extends Evolution {
     constructor() {
         super();
         this.name = "lumberjack";
-        this.abilityDuration = 5000;
+        this.abilityDuration = 6000;
         this.abilityCooldown = 40000;
-        this.subEvolutions = [50000, new Fisherman(), new Juggernaut()];
+        this.subEvolutions = [50000, new Illusioner(), new Fisherman()];
     }
     default() {
         return {
-            maxHealth: 0.6,
-            health: 0.6,
-            speed: 1,
+            maxHealth: 0.5,
+            health: 0.5,
+            speed: 1.1,
             scale: 1.2,
             power: 1.3,
             resistance: 1.2,
-            damage: 2.2,
-            damageCooldown: 1.8,
+            damage: 4,
+            damageCooldown: 1.7,
             healAmount: 1.5,
             healWait: 1.7,
-            throwCooldown: 0.4
+            throwCooldown: 0.4,
+            throwDamageMultiplier: 0.5, 
         };
     }
     ability() {
         return {
-            healWait: 2,
+            healWait: 0,
             healAmount: 1.5,
             scale: 1.2,
             power: 1.5,
             damageCooldown: 1.25,
             resistance: 1,
-            damage: 4,
             speed: 1.2,
-            throwCooldown: 0.3,
-            throwDamageMultiplier: 0.1
         };
     }
 }

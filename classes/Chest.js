@@ -15,33 +15,33 @@ function getRandomInt(min, max) {
       this.raritys = {
         normal: {
           scale: 0.75,
-          drop: [65,112],
+          drop: [10000,10000],
           health: 1
         },
         uncommon: {
-          scale: 1,
-          drop: [150,210],
-          health: 20
+          scale: 0.75,
+          drop: [10000,10000],
+          health: 1
         },
         rare: {
-          scale: 1.25,
-          drop: [400,650],
-          health: 50,
+          scale: 0.75,
+          drop: [10000,10000],
+          health: 1
         },
         epic: {
-          scale: 1.5,
-          drop: [800,1100],
-          health: 250
+          scale: 0.75,
+          drop: [10000,10000],
+          health: 1
         },
         legendary: {
-          scale: 2.5,
-          drop: [1500,3000],
-          health: 400
+          scale: 0.75,
+          drop: [10000,10000],
+          health: 1
         },
         mythical: {
-          scale: 3.5,
-          drop: [8500,12000],
-          health: 1000
+          scale: 0.75,
+          drop: [10000,10000],
+          health: 1
         }
       };
       this.width = 352;

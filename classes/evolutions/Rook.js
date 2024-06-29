@@ -1,15 +1,15 @@
 
 
 const Evolution = require("./Evolution");
-const Samurai = require("./Samurai");
-const Lumberjack = require("./Lumberjack");
+const Gladiator = require("./Gladiator");
+const Mummy = require("./Mummy");
 class Rook extends Evolution {
     constructor() {
         super();
         this.name = "rook";
         this.abilityDuration = 8000;
-        this.abilityCooldown = 50000;
-        this.subEvolutions = [30000, new Samurai(), new Lumberjack()];
+        this.abilityCooldown = 60000;
+        this.subEvolutions = [30000, new Gladiator(), new Mummy()];
     }
     default() {
         return {
@@ -28,12 +28,12 @@ class Rook extends Evolution {
     ability() {
         return {
             healWait: 0,
-            healAmount: 1.5,
-            scale: 1.6,
-            power: 1.75,
+            healAmount: 2,
+            scale: 5,
+            power: 2,
             damageCooldown: 0.7,
             resistance: 1,
-            speed: 1.6,
+            speed: 0.5
         };
     }
 }

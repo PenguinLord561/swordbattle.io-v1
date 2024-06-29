@@ -91,43 +91,53 @@ var progress = 1 - (remainder / total);
         this.load.image("warriorPlayer", "/assets/images/warriorSkin.png");
         // knight evolution
         this.load.image("knightPlayer", "/assets/images/knightSkin.png");
-
-        // vampire evolution
-        this.load.image("vampirePlayer", "/assets/images/vampireSkin.png");
         // rook evolution
         this.load.image("rookPlayer", "/assets/images/rookSkin.png");
-
+        //beserker evolution
         this.load.image("berserkerPlayer", "/assets/images/berserkerSkin.png");
+        //tank evolution
         this.load.image("tankPlayer", "/assets/images/tankSkin.png");
-        // warrior evolution
-        this.load.image("warriorPlayer", "/assets/images/warriorSkin.png");
         // knight evolution
         this.load.image("knightPlayer", "/assets/images/knightSkin.png");
-
         // vampire evolution
         this.load.image("vampirePlayer", "/assets/images/vampireSkin.png");
         // rook evolution
         this.load.image("rookPlayer", "/assets/images/rookSkin.png");
-
         // archer evolution
         this.load.image("archerPlayer", "/assets/images/archerSkin.png");
-
         // Juggernaut evolution
         this.load.image("juggernautPlayer", "/assets/images/juggernautPlayer.png");
-
         // archergod evolution
         this.load.image("archergodPlayer", "/assets/images/archergodSkin.png");
-
         // fisherman evolution
         this.load.image("fishermanPlayer", "/assets/images/fishermanSkin.png");
-
         // lumberjack evolution
         this.load.image("lumberjackPlayer", "/assets/images/lumberjackSkin.png");
-
         // samurai evolution
         this.load.image("samuraiPlayer", "/assets/images/samuraiSkin.png");
-
-
+        // pharoah  evolution
+        this.load.image("pharoahPlayer", "/assets/images/pharoahSkin.png");
+        // corroder  evolution
+        this.load.image("revenantPlayer", "/assets/images/revenantSkin.png");
+        // gladiator  evolution
+        this.load.image("gladiatorPlayer", "/assets/images/gladiatorSkin.png");
+        // mummy  evolution
+        this.load.image("mummyPlayer", "/assets/images/mummySkin.png");
+        // nexus evolution
+        this.load.image("nexusPlayer", "/assets/images/nexusSkin.png");
+        // runic evolution
+        this.load.image("runicPlayer", "/assets/images/runicSkin.png");
+        // archerblade evolution  
+        this.load.image("archerbladePlayer", "/assets/images/archerbladeSkin.png");
+        // inferno evolution
+        this.load.image("infernoPlayer", "/assets/images/infernoSkin.png");
+        // touketsu evolution
+        this.load.image("touketsuPlayer", "/assets/images/touketsuSkin.png");
+        // illusioner evolution
+        this.load.image("illusionerPlayer", "/assets/images/illusionerSkin.png");
+        // vangaurd evolution
+        this.load.image("vangaurdPlayer", "/assets/images/vangaurdSkin.png");
+      
         this.load.image("background", "/assets/images/background.jpeg");
         this.load.image("coin", "/assets/images/coin.png");
 

@@ -15,9 +15,9 @@ class Berserker extends Evolution {
     }
     default() {
         return {
-            speed: 1,
-            power: 1,
-            resistance: 1.1,
+            speed: 1.1,
+            power: 1.1,
+            resistance: 0.9,
             damage: 1.25,
             damageCooldown: 1,
         };

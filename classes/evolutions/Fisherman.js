@@ -11,29 +11,27 @@ class Fisherman extends Evolution {
     }
     default() {
         return {
-            maxHealth: 1,
-            health: 1,
+            maxHealth: 0.85,
+            health: 0.85,
             speed: 1.1,
             scale: 1,
             power: 1,
             resistance: 1,
-            damage: 1.8,
+            damage: 1.9,
             damageCooldown: 1.3,
             healAmount: 1.5,
-            healWait: 1
+            healWait: 1,
+            throwCooldown: 0.5,
         };
     }
     ability() {
         return {
-            healWait: 0.5,
+            healWait: 0,
             healAmount: 3,
-            scale: 1.2,
+            scale: 1.5,
             power: 1,
-            damageCooldown: 0.3,
             resistance: 1,
-            damage: 1.4,
             speed: 2,
-            throwCooldown: 0,
         };
     }
 }

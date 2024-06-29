@@ -11,12 +11,12 @@ class Juggernaut extends Evolution {
     }
     default() {
         return {
-            maxHealth: 1.5,
-            health: 1.5,
-            speed: 0.8,
+            maxHealth: 1.8,
+            health: 1.8,
+            speed: 0.7,
             scale: 1.4,
             power: 1,
-            resistance: 3.8,
+            resistance: 7,
             damage: 1.5,
             damageCooldown: 1.2,
             healAmount: 1.5,
@@ -27,7 +27,7 @@ class Juggernaut extends Evolution {
         return {
             healWait: 0,
             healAmount: 2,
-            scale: 2.1,
+            scale: 4,
             power: 2.3,
             damageCooldown: 0.6,
             resistance: 1.3,
