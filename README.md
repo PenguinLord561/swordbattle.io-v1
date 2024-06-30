@@ -31,5 +31,3 @@ You can use this code as a base for your IO games, but please change it to a con
 Thanks.
 
 [![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=78c9223db701&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
-# Swordbattle-V1-with-Mods-1
-# swordbattle-v1-pls-work
